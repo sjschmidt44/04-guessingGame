@@ -98,23 +98,47 @@ function yesNo6() {
 yesNo6();
 
 //QUESTION 7 check 8/25 lecture youtube to do this - get much less complicated
-function yesNo7() {
+function stateQuestion() {
   var state = ['INDIANA', 'ILLINOIS', 'CALIFORNIA', 'NEW YORK', 'NORTH CAROLINA'];
-  var stateGuess = prompt('Please guess what state I have lived in besides Washington?').toUpperCase();
   var correct = false; //check this out!
+  var stateGuess = prompt('Please guess what state I have lived in besides Washington?').toUpperCase();
+  var counter = 5;
 
-  for (var counter = 0; counter < 5; counter++)
-    if (state === stateGuess[counter]) {
-      correct = true;
+  // while(counter) // counter is 0   => falsey
+                    // counter is >0  => truthy
+  // while(!<falsey>) // => truthy
+
+  console.log('before while');
+  while(counter) {
+    console.log('inside while');
+    for (var i = 0; i < state.length; i++) {
+      if (state[i] === stateGuess) {
+        correct = true;
+      }
     }
-  if (correct === true) {
-    alert('Correct!');
-    correctGuess++;
-  } else {
-    alert('Incorrect');
+
+    // if (correct === true) {
+    if (correct) {
+      alert('Correct!');
+      correctGuess++;
+      break;
+    } else {
+      stateGuess = prompt('Incorrect. Try again.').toUpperCase();
+      counter--;
+    }
   }
+
+
+  // for (var counter = 0; counter < 5; counter++) {
+  //   if (state === stateGuess[counter]) {
+  //     alert('Correct!');
+  //     correctGuess++;
+  //   } else {
+  //     alert('Incorrect');
+  //   }
+  // }
 }
-yesNo7();
+stateQuestion();
 
 
 alert('Thank you for playing. You got ' + correctGuess + ' correct.');

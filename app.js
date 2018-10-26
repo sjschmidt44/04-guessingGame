@@ -101,6 +101,7 @@ yesNo6();
 function stateQuestion() {
   var state = ['INDIANA', 'ILLINOIS', 'CALIFORNIA', 'NEW YORK', 'NORTH CAROLINA'];
   var correct = false; //check this out!
+
   var stateGuess = prompt('Please guess what state I have lived in besides Washington?').toUpperCase();
   var counter = 5;
 
@@ -137,6 +138,7 @@ function stateQuestion() {
   //     alert('Incorrect');
   //   }
   // }
+
 }
 stateQuestion();
 

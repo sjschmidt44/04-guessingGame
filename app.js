@@ -102,17 +102,38 @@ function yesNo7() {
   var state = ['INDIANA', 'ILLINOIS', 'CALIFORNIA', 'NEW YORK', 'NORTH CAROLINA'];
   var stateGuess = prompt('Please guess what state I have lived in besides Washington?').toUpperCase();
   var correct = false; //check this out!
-
-  for (var counter = 0; counter < 5; counter++)
-    if (state === stateGuess[counter]) {
+  var counter = 5
+  
+  //while(counter // counter = 0 => flasey
+  //while(!<falsey>) // => truthy
+  
+  while(!counter && !correct) {
+    
+  for (var i = 0; i < state.length; i++) {
+    if (state[i] === stateGuess) {
       correct = true;
     }
-  if (correct === true) {
-    alert('Correct!');
-    correctGuess++;
-  } else {
-    alert('Incorrect');
   }
+  
+  //if correct === true) {
+  if (correct) {
+    alert('Correct');
+    correctGuess++;
+    break;
+  } else {
+      stateGuess = prompt('Incorrect. Try again.').toUpperCase;
+      counter--;
+  }
+ }
+
+  //for (var counter = 0; counter < 5; counter++)
+   // if (state === stateGuess[counter]) {
+    //  alert('Correct!');
+   //   correctGuess++;
+   // } else {
+    //  alert('Incorrect');
+    //}
+  //}
 }
 yesNo7();
 
